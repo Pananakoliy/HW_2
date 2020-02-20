@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "shootingRange" class="ShootingRange" factory-method="getInstance"/>
+
+    <bean id="kenny" class="Military">
+        <property name="battleCry" value="RAWR" />
+        <property name="gun" ref="tommyGun"/>
+    </bean>
+
+
+    <bean id = "tommyGun" class="tommyGun"/>
+
+    <bean id = "beretta" class="Beretta"/>
+
+    <bean id = "hank" class="Commando">
+        <property name="guns">
+            <list>
+                <ref bean="tommyGun"/>
+                <ref bean="beretta"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id ="beowulf" class="BattleCry"/>
+
+</beans>
